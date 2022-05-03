@@ -7,10 +7,10 @@ import java.net.URL;
 import java.util.ArrayList;
 import java.util.*;
 import java.util.Scanner;
-public class ex20_1 {
+public class week10_ex20_1 {
 
     public static void main(String... args) {
-        ex20_1 exercise2001 = new ex20_1();
+       week10_ex20_1 exercise2001 = new week10_ex20_1();
         File file = new File("Turkestan.txt");
         try {
             file = exercise2001.getFileFromResources();
