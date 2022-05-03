@@ -2,7 +2,7 @@ package com.example.demo3;
 
 import java.util.Iterator;
 import java.util.LinkedList;
-public class ex20_6 {
+public class week10_ex20_6 {
     static Integer size = 5_000_000;
     private static final boolean PRINT_TEST = false;
 
