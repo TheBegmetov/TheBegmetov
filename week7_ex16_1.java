@@ -11,7 +11,7 @@ import javafx.geometry.*;
 import javafx.beans.value.ObservableValue;
 import javafx.scene.control.ToggleGroup;
 
-public class ex16_1 extends Application{
+public class week7_ex16_1 extends Application{
 
     public static void main(String args []){launch(args);}
 
