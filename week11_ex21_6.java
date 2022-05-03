@@ -1,7 +1,7 @@
 package com.example.salemjavafx;
 
 import java.util.Scanner;
-public class ex21_06 {
+public class week11_ex21_6 {
 
     public static void main(String[] args) {
 
