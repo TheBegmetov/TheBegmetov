@@ -2,7 +2,7 @@ package com.example.salemjavafx;
 
 import java.util.*;
 
-public class ex21_01 {
+public class week11_ex21_1 {
     public static void main(String[] args) {
         Set<String> set1 = new LinkedHashSet<>(Arrays.asList(
                 "George", "Jim", "John", "Blake", "Kevin", "Michael"));
