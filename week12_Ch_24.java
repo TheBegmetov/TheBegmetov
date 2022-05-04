@@ -4,16 +4,16 @@ package Ch_24;
 public class MyLinkedList<E> extends MyAbstractList<E> {
   private Node<E> head, tail;
 
-  /** Create a default list */
+ 
   public MyLinkedList() {
   }
 
-  /** Create a list from an array of objects */
+
   public MyLinkedList(E[] objects) {
     super(objects);
   }
 
-  /** Return the head element in the list */
+
   public E getFirst() {
     if (size == 0) {
       return null;
@@ -23,7 +23,7 @@ public class MyLinkedList<E> extends MyAbstractList<E> {
     }
   }
 
-  /** Return the last element in the list */
+ 
   public E getLast() {
     if (size == 0) {
       return null;
@@ -33,35 +33,34 @@ public class MyLinkedList<E> extends MyAbstractList<E> {
     }
   }
 
-  /** Add an element to the beginning of the list */
+ 
   public void addFirst(E e) {
-    Node<E> newNode = new Node<E>(e); // Create a new node
-    newNode.next = head; // link the new node with the head
-    head = newNode; // head points to the new node
-    size++; // Increase list size
+    Node<E> newNode = new Node<E>(e); 
+    newNode.next = head; 
+    head = newNode; 
+    size++; 
 
-    if (tail == null) // the new node is the only node in list
+    if (tail == null) 
       tail = head;
   }
 
-  /** Add an element to the end of the list */
-  public void addLast(E e) {
-    Node<E> newNode = new Node<E>(e); // Create a new for element e
 
+  public void addLast(E e) {
+    Node<E> newNode = new Node<E>(e); 
+   
     if (tail == null) {
-      head = tail = newNode; // The new node is the only node in list
+      head = tail = newNode; 
     }
     else {
-      tail.next = newNode; // Link the new with the last node
-      tail = tail.next; // tail now points to the last node
+      tail.next = newNode; 
+      tail = tail.next; 
     }
 
-    size++; // Increase size
+    size++; 
   }
 
 
-  @Override /** Add a new element at the specified index 
-   * in this list. The index of the head element is 0 */
+  @Override 
   public void add(int index, E e) {
     if (index == 0) {
       addFirst(e);
@@ -81,8 +80,7 @@ public class MyLinkedList<E> extends MyAbstractList<E> {
     }
   }
 
-  /** Remove the head node and
-   *  return the object that is contained in the removed node. */
+ 
   public E removeFirst() {
     if (size == 0) {
       return null;
@@ -98,8 +96,7 @@ public class MyLinkedList<E> extends MyAbstractList<E> {
     }
   }
 
-  /** Remove the last node and
-   * return the object that is contained in the removed node. */
+ 
   public E removeLast() {
     if (size == 0) {
       return null;
@@ -125,8 +122,7 @@ public class MyLinkedList<E> extends MyAbstractList<E> {
     }
   }
 
-  @Override /** Remove the element at the specified position in this 
-   *  list. Return the element that was removed from the list. */
+  @Override
   public E remove(int index) {   
     if (index < 0 || index >= size) {
       return null;
@@ -151,7 +147,7 @@ public class MyLinkedList<E> extends MyAbstractList<E> {
     }
   }
 
-  @Override /** Override toString() to return elements in the list */
+  @Override 
   public String toString() {
     StringBuilder result = new StringBuilder("[");
 
@@ -160,23 +156,23 @@ public class MyLinkedList<E> extends MyAbstractList<E> {
       result.append(current.element);
       current = current.next;
       if (current != null) {
-        result.append(", "); // Separate two elements with a comma
+        result.append(", "); 
       }
       else {
-        result.append("]"); // Insert the closing ] in the string
+        result.append("]"); 
       }
     }
 
     return result.toString();
   }
 
-  @Override /** Clear the list */
+  @Override 
   public void clear() {
     size = 0;
     head = tail = null;
   }
 
-  @Override /** Return true if this list contains the element e */
+  @Override 
   public boolean contains(E e) {
     Node<E> current = head;
     for (int i = 0; i < size; i++) {
@@ -188,7 +184,7 @@ public class MyLinkedList<E> extends MyAbstractList<E> {
     return false;
   }
 
-  @Override /** Return the element at the specified index */
+  @Override 
   public E get(int index) {
     checkIndex(index);
     Node<E> current = head;
@@ -202,8 +198,7 @@ public class MyLinkedList<E> extends MyAbstractList<E> {
     return null;
   }
 
-  @Override /** Return the index of the head matching element in 
-   *  this list. Return -1 if no match. */
+  @Override 
   public int indexOf(E e) {
     Node<E> current = head;
     for (int i = 0; i < size; i++) {
@@ -214,8 +209,7 @@ public class MyLinkedList<E> extends MyAbstractList<E> {
     return -1;
   }
 
-  @Override /** Return the index of the last matching element in 
-   *  this list. Return -1 if no match. */
+  @Override 
   public int lastIndexOf(E e) {
     Node<E> current = head;
     int lastIndex = -1;
@@ -227,8 +221,7 @@ public class MyLinkedList<E> extends MyAbstractList<E> {
     return lastIndex;
   }
 
-  @Override /** Replace the element at the specified position 
-   *  in this list with the specified element. */
+  @Override 
   public E set(int index, E e) {
     checkIndex(index);
 
@@ -245,7 +238,7 @@ public class MyLinkedList<E> extends MyAbstractList<E> {
     return oldValue;
   }
 
-  @Override /** Override iterator() defined in Iterable */
+  @Override 
   public java.util.Iterator<E> iterator() {
     return new LinkedListIterator();
   }
@@ -258,7 +251,7 @@ public class MyLinkedList<E> extends MyAbstractList<E> {
   
   private class LinkedListIterator 
       implements java.util.Iterator<E> {
-    private Node<E> current = head; // Current index 
+    private Node<E> current = head; 
     
     @Override
     public boolean hasNext() {
