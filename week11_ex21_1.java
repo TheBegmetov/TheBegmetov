@@ -15,11 +15,8 @@ public class week11_ex21_1 {
         Set<String> difference = new LinkedHashSet<>(set1);
         difference.removeAll(set2);
         System.out.println("Difference of the two sets: " + difference);
-        Set<String> intersection = new LinkedHashSet<>();
-        for (String e: set2) {
-            if (set1.contains(e))
-                intersection.add(e);
-        }
+        Set<String> intersection = new LinkedHashSet<>(set1);
+        intersection.retainAll(set2);
         System.out.println("Intersection of the two sets: " + intersection);
     }
 }
