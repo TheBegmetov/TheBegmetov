@@ -9,23 +9,23 @@ import java.util.Scanner;
 public class week14_Server {
     public static void main (String[] args) throws IOException{
         ServerSocket server = new ServerSocket(8081);
-        System.out.println("waiting connection");
+        System.out.println("wait connection");
        
-        int cnt = 0;
+        int c = 0;
 
         while (true) {
             
             Socket conn = server.accept();
-            System.out.println(cnt + " client Connected");
-            cnt++;
+            System.out.println(c + " client Connected");
+            c++;
 
 
             DataInputStream fromClient = new DataInputStream(conn.getInputStream());
             DataOutputStream toServer = new DataOutputStream(conn.getOutputStream());
-            toServer.writeUTF("u client number"+ cnt);
+            toServer.writeUTF("u client number"+ c);
 
 
-            Scanner send = new Scanner(System.in);
+           
 
         }
 
